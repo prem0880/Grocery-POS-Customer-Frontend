@@ -14,12 +14,12 @@ export class StateService {
     const newCountry = {
       name : state.name
     }
-    return this.http.post("http://localhost:8083/api/state/country/"+state.country+"/save", newCountry,{headers, responseType : 'text'} );
+    return this.http.post("https://admin-pos.herokuapp.com/api/state/country/"+state.country+"/save", newCountry,{headers, responseType : 'text'} );
   }
   
   get(id:any) : Observable<any> {
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.get<State>("http://localhost:8083/api/state/"+id);
+    return this.http.get<State>("https://admin-pos.herokuapp.com/api/state/"+id);
   }
 }
 export class State {

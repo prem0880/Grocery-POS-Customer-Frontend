@@ -17,12 +17,12 @@ export class AddressService {
       city : address.city,
       pinCode : address.pinCode
     }
-    return this.http.post("http://localhost:8083/api/add-address/"+address.state+"/"+id, newaddr, {headers, responseType: 'text'} );
+    return this.http.post("https://admin-pos.herokuapp.com/api/add-address/"+address.state+"/"+id, newaddr, {headers, responseType: 'text'} );
   }
 
   get(id:any) :Observable<any>{
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.get<Address>("http://localhost:8083/api/get-address/"+id);
+    return this.http.get<Address>("https://admin-pos.herokuapp.com/api/get-address/"+id);
   }
 }
 

@@ -11,12 +11,12 @@ export class CountryService {
 
   create(country : Country) {
   
-    return this.http.post("http://localhost:8083/api/country/save", country, {responseType: 'text'} );
+    return this.http.post("https://admin-pos.herokuapp.com/api/country/save", country, {responseType: 'text'} );
   }
   
   get() : Observable<any> {
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.get<Country>("http://localhost:8083/api/countries");
+    return this.http.get<Country>("https://admin-pos.herokuapp.com/api/countries");
   }
 }
 export class Country {

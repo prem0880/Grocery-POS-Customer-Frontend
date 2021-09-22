@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  private baseUrl = 'http://localhost:8083/api/category';
+  private baseUrl = 'https://admin-pos.herokuapp.com/api/category';
 
   constructor(private http: HttpClient) { }
 

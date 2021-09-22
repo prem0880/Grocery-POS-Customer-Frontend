@@ -8,7 +8,7 @@ import { Category } from '../category/category.service';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8083/api/product';
+  private baseUrl = 'https://admin-pos.herokuapp.com/api/product';
 
 
   constructor(private http : HttpClient) { }
@@ -23,7 +23,7 @@ export class ProductService {
 
   getAllProduct() : Observable<any>{
   
-    return this.http.get<Product>(`http://localhost:8083/api/products`);
+    return this.http.get<Product>(`https://admin-pos.herokuapp.com/api/products`);
   }
 
   getProductById(id:number) : Observable<any>{
@@ -33,7 +33,7 @@ export class ProductService {
 
   getProducts():Observable<any>
   {
-    return this.http.get('http://localhost:8083/api/product')
+    return this.http.get('https://admin-pos.herokuapp.com/api/product')
   }
 
   getProductByName(name:string):Observable<any>

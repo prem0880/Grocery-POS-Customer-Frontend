@@ -7,7 +7,7 @@ import { Order } from './order';
   providedIn: 'root'
 })
 export class OrderService {
-  private baseUrl='http://localhost:8083/api'
+  private baseUrl='https://admin-pos.herokuapp.com/api'
   constructor(private http:HttpClient) { }
   addOrder(customerId:number,addressId:number,order:object):Observable<any>
   {
@@ -36,7 +36,7 @@ export class OrderService {
   }
   generateBillReceipt(orderId:number) : Observable<any> {
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.http.get("http://localhost:8083/api/get-bill/pdf/?p="+`${orderId}`);
+    return this.http.get("https://admin-pos.herokuapp.com/api/get-bill/pdf/?p="+`${orderId}`);
   }
   
 }
